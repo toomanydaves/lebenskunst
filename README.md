@@ -3,7 +3,7 @@ Django-based Server with MySQL DB
 
 ## System requirements
 *   git
-*   python/pip
+*   python3/pip
 *   mysql
 *   [mysqlclient](https://docs.djangoproject.com/en/1.11/ref/databases/#mysql-db-api-drivers)
 
@@ -23,10 +23,15 @@ Logging in to db with user to confirm success.
 
     mysql -u lebenskunst -p lebenskunst_dev
 
+## Create a virtualenv environment with python 3
+    virtualenv -p /Library/Frameworks/Python.framework/Versions/3.5/bin/python3 lebenskunst
+    source lebenskunst/bin/activate
+    (lebenskunst)
+
 ## Get and install the source
     git clone https://github.com/toomanydaves/lebenskunst.git
     cd lebenskunst
-    pip3 install
+    (lebenskunst) pip install -r requirements.txt
 
 ## Create an .env file in the top-level directory to store your local credentials
     DEBUG=True
@@ -37,10 +42,10 @@ Logging in to db with user to confirm success.
     DB_PORT=3306
 
 ## Migrate the db schema
-    python3 manage.py migrate
+    (lebenskunst) python manage.py migrate
 
 ## Add a superuser
-    python3 manage.py createsuperuser
+    (lebenskunst) python manage.py createsuperuser
 
 ## Run the  server
-    python3 manage.py runserver
+    (lebenskunst) python manage.py runserver
